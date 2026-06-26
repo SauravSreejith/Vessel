@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "browser": false,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "strict": ["error", "global"]
+  },
+  "overrides": [
+    {
+      "files": ["preload.js"],
+      "env": {
+        "node": true,
+        "browser": true
+      }
+    }
+  ]
+}
