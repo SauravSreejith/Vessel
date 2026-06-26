@@ -1,0 +1,45 @@
+name: Build and Release Vessel
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 26
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          cache: 'npm'
+
+      - name: Install System Dependencies for Electron Builder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libarchive-tools dpkg fakeroot rpm
+
+      - name: Install Node Dependencies
+        run: npm ci 
+
+      - name: Build Linux Artifacts (AppImage & deb)
+        run: npm run build:all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.AppImage
+            dist/*.deb
+          draft: false
+          prerelease: false
+          generate_release_notes: true
