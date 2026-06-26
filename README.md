@@ -1,4 +1,5 @@
-# Vessel 🚢
+<img width="3464" height="1309" alt="banner" src="https://github.com/user-attachments/assets/368ec6ec-4394-4b96-9db9-83fa550288eb" />
+
 
 A lightweight, secure Discord wrapper for Linux — built with Electron.
 
