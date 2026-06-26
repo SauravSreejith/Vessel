@@ -62,6 +62,18 @@ npm run dist:appimage
 npm run build
 ```
 
+### ⚠️ Important: Notification Setup
+
+For Vessel to correctly forward alerts to your system (D-Bus), you must ensure Discord's internal notification setting is enabled:
+
+1. Open **User Settings** in your Discord client.
+2. Navigate to the **Notifications** tab in the left sidebar.
+3. Ensure **"Enable Desktop Notifications"** is toggled **ON** (as shown below).
+
+<img width="1293" height="494" alt="image" src="https://github.com/user-attachments/assets/5f34a1cd-5cc4-4b63-934e-1ca7ea1334bc" />
+
+> *Note: If this setting is disabled, Vessel cannot intercept the notification events, and you will not receive system-wide alerts.*
+
 ### Icon
 
 Place your icon at `icons/icon.png` (512×512 px recommended). electron-builder
