@@ -1,4 +1,5 @@
-<img width="3464" height="1309" alt="banner" src="https://github.com/user-attachments/assets/368ec6ec-4394-4b96-9db9-83fa550288eb" />
+<img width="1344" height="768" alt="project-vessel" src="https://github.com/user-attachments/assets/a45a4838-1c9a-416c-bf32-55de54ffd6ff" />
+
 
 
 A lightweight, secure Discord wrapper for Linux — built with Electron.
